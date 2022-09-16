@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyClip</string>
+    <string name="title_home">Home</string>
+    <string name="title_report">Report</string>
+    <string name="title_inbox">Inbox</string>
+    <string name="title_currency">Currency</string>
+</resources>
