@@ -35,6 +35,9 @@ android {
 }
 
 dependencies {
+    //room
+    implementation "androidx.room:room-runtime:2.4.3"
+
     //recyclerview
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 

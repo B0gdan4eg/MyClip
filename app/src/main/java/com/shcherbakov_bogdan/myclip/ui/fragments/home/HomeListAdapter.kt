@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.shcherbakov_bogdan.myclip.R
-import com.shcherbakov_bogdan.myclip.data.Transactions
+import com.shcherbakov_bogdan.myclip.data.transactions.Transactions
 
 class HomeListAdapter(private val transactions: ArrayList<Transactions>)  : RecyclerView
 .Adapter<HomeListAdapter.TransactionViewHolder>() {
@@ -27,7 +27,7 @@ class HomeListAdapter(private val transactions: ArrayList<Transactions>)  : Recy
     }
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int) {
-        holder.expensesTextView.text = transactions[position].getDate()
+        holder.expensesTextView.text = transactions.toString()
         holder.incomeTextView.text = transactions.toString()
         holder.dateDayTextView.text = transactions.toString()
         holder.toWeeksTextView.text = transactions.toString()
