@@ -1,7 +1,7 @@
 package com.shcherbakov_bogdan.myclip.service.repository
 
-import com.shcherbakov_bogdan.myclip.data.CurrencyRates
-import com.shcherbakov_bogdan.myclip.service.repository.remote.Remote
+import com.shcherbakov_bogdan.myclip.data.remote.CurrencyRates
+import com.shcherbakov_bogdan.myclip.data.remote.Remote
 import io.reactivex.Observable
 
 class Repository(

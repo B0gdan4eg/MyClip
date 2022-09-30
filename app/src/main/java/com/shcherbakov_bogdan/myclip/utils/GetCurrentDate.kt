@@ -8,7 +8,7 @@ import java.util.*
 
 @RequiresApi(Build.VERSION_CODES.N)
 fun Date.toString(locale: Locale = Locale.getDefault()): String {
-    val formatter = SimpleDateFormat("dd/M/yyyy", locale)
+    val formatter = SimpleDateFormat("dd/MMM/yyyy", locale)
     return formatter.format(this)
 }
 

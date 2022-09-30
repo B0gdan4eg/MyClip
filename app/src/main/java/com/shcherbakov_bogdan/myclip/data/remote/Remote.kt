@@ -1,6 +1,5 @@
-package com.shcherbakov_bogdan.myclip.service.repository.remote
+package com.shcherbakov_bogdan.myclip.data.remote
 
-import com.shcherbakov_bogdan.myclip.data.CurrencyRates
 import com.shcherbakov_bogdan.myclip.utils.BASE_URL
 import io.reactivex.Observable
 import retrofit2.Retrofit

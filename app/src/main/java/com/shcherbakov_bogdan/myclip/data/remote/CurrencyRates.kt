@@ -1,4 +1,4 @@
-package com.shcherbakov_bogdan.myclip.data
+package com.shcherbakov_bogdan.myclip.data.remote
 
 data class CurrencyRates(
     val Cur_Abbreviation: String,

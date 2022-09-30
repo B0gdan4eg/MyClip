@@ -28,3 +28,23 @@ data class Transactions(
     @ColumnInfo(name = "transaction_description")
     val description: String,
 )
+
+fun getTransactionDay(transactions: Transactions) : String {
+    return transactions.date.day.toString()
+}
+
+fun getTransactionMonthYear(transactions: Transactions) : String {
+    return transactions.date.month.toString() + transactions.date.year.toString()
+}
+
+fun getAmountOfTransaction(transactions: Transactions) : String {
+    return transactions.amount.toString()
+}
+
+fun getConditionOfTransaction(transactions: Transactions) : Boolean {
+    if (transactions.condition) {
+        return true
+    }
+    return false
+}
+
