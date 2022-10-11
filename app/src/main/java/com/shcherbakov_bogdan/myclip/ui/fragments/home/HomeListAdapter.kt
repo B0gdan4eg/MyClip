@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.shcherbakov_bogdan.myclip.R
 import com.shcherbakov_bogdan.myclip.data.transactions.*
 
-class HomeListAdapter(private val transactions: ArrayList<Transactions>)  : RecyclerView
+class HomeListAdapter(private val transactions: List<Transactions>)  : RecyclerView
 .Adapter<HomeListAdapter.TransactionViewHolder>() {
 
     class TransactionViewHolder(layout: ConstraintLayout) : RecyclerView.ViewHolder(layout){

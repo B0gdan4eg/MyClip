@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:textSize="52sp"
         android:text="09"
-        android:textColor="@color/white"
+        android:textColor="@color/mate_grey"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />
@@ -24,7 +24,7 @@
         android:layout_height="40dp"
         android:text="Friday"
         android:textSize="30sp"
-        android:textColor="@color/grey"
+        android:textColor="@color/green_100"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/date_day"
         />
@@ -35,7 +35,7 @@
         android:layout_height="0dp"
         android:textSize="22sp"
         android:text="sept. 2022"
-        android:textColor="@color/white"
+        android:textColor="@color/mate_grey"
         app:layout_constraintTop_toBottomOf="@id/to_weeks"
         app:layout_constraintStart_toEndOf="@id/date_day"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -4,34 +4,36 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
-import com.shcherbakov_bogdan.myclip.R
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.shcherbakov_bogdan.myclip.databinding.FragmentHomeBinding
-import com.shcherbakov_bogdan.myclip.ui.fragments.inbox.InboxViewModel
+import javax.inject.Inject
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var adapter: HomeListAdapter
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private val viewModel: HomeViewModel by viewModels{
+        viewModelFactory
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        return root
-    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        val layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.layoutManager = layoutManager
+        binding.recyclerView.adapter = adapter
+
+        return binding.root
+    }
 }

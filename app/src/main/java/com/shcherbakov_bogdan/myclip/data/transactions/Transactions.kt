@@ -13,19 +13,19 @@ data class Transactions(
     @PrimaryKey(autoGenerate = true)
     var id: Long = 0L,
 
-    @ColumnInfo(name = "transaction_amount")
+    @ColumnInfo(name = "amount")
     val amount: Double,
 
-    @ColumnInfo(name = "transaction_date")
+    @ColumnInfo(name = "date")
     val date: Date = getCurrentDateTime(),
 
-    @ColumnInfo(name = "transaction_condition")
+    @ColumnInfo(name = "condition")
     val condition: Boolean,
 
-    @ColumnInfo(name = "transaction_category")
+    @ColumnInfo(name = "category")
     val category: Category,
 
-    @ColumnInfo(name = "transaction_description")
+    @ColumnInfo(name = "description")
     val description: String,
 )
 

@@ -15,5 +15,5 @@ interface TransactionDao {
     fun clear(transactions: Transactions)
 
     @Query("SELECT * FROM transactions")
-    fun getAllTransactions(transactions: Transactions)
+    fun getAllTransactions()
 }
