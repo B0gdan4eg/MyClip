@@ -6,10 +6,12 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.shcherbakov_bogdan.myclip.R
-import com.shcherbakov_bogdan.myclip.data.transactions.*
+import com.shcherbakov_bogdan.myclip.data.transactions.Transactions
+import com.shcherbakov_bogdan.myclip.data.transactions.getAmountOfTransaction
+import com.shcherbakov_bogdan.myclip.data.transactions.getConditionOfTransaction
 import com.shcherbakov_bogdan.myclip.utils.splitStrDate
 
-class HomeListAdapter(private val viewModel: HomeViewModel)  : RecyclerView
+class HomeListAdapter(private val viewModel: HomeViewModel) : RecyclerView
 .Adapter<HomeListAdapter.TransactionViewHolder>() {
 
     var transactions: List<Transactions> = ArrayList()
@@ -19,8 +21,7 @@ class HomeListAdapter(private val viewModel: HomeViewModel)  : RecyclerView
         }
 
 
-
-    class TransactionViewHolder(layout: ConstraintLayout) : RecyclerView.ViewHolder(layout){
+    class TransactionViewHolder(layout: ConstraintLayout) : RecyclerView.ViewHolder(layout) {
         val expensesTextView: TextView = itemView.findViewById(R.id.expenses)
         val incomeTextView: TextView = itemView.findViewById(R.id.income)
         val dateDayTextView: TextView = itemView.findViewById(R.id.date_day)
@@ -43,9 +44,9 @@ class HomeListAdapter(private val viewModel: HomeViewModel)  : RecyclerView
             holder.incomeTextView.text = "0.00"
             holder.expensesTextView.text = getAmountOfTransaction(transactions[position])
         }
-        holder.dateDayTextView.text = splitStrDate((transactions[position].date),2)
-        holder.toWeeksTextView.text = splitStrDate((transactions[position].date),0)
-        holder.monthYearTextView.text = splitStrDate((transactions[position].date),1)
+        holder.dateDayTextView.text = splitStrDate((transactions[position].date), 2)
+        holder.toWeeksTextView.text = splitStrDate((transactions[position].date), 0)
+        holder.monthYearTextView.text = splitStrDate((transactions[position].date), 1)
     }
 
     override fun getItemCount(): Int {

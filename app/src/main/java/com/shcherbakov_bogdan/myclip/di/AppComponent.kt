@@ -13,8 +13,9 @@ import javax.inject.Singleton
         ViewModelModule::class]
 )
 @Singleton
-interface AppComponent  {
+interface AppComponent {
     fun viewModelsFactory(): ViewModelFactory
+
     @Component.Builder
     interface Builder {
         @BindsInstance

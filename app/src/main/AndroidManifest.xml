@@ -29,11 +29,12 @@
 
         <service android:name=".service.smsreceiver.SmsService" />
 
-        <receiver android:name=".service.smsreceiver.SMSMonitor"
+        <receiver
+            android:name=".service.smsreceiver.SMSMonitor"
             android:exported="true"
             android:permission="android.permission.BROADCAST_SMS">
             <intent-filter android:priority="100">
-                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
 

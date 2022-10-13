@@ -11,8 +11,9 @@ import com.shcherbakov_bogdan.myclip.data.transactions.Transactions
 
 const val DB_NAME = "finance.db"
 
-@Database(entities = [
-    Transactions::class, Account::class, Category::class],
+@Database(
+    entities = [
+        Transactions::class, Account::class, Category::class],
     version = 1,
     exportSchema = false
 )

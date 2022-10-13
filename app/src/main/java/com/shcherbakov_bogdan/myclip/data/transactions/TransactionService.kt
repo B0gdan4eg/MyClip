@@ -1,6 +1,6 @@
 package com.shcherbakov_bogdan.myclip.data.transactions
 
-typealias TransactionListener = (transitions : List<Transactions>) -> Unit
+typealias TransactionListener = (transitions: List<Transactions>) -> Unit
 
 class TransactionService {
 

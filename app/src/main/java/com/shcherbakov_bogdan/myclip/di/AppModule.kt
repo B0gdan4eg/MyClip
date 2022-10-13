@@ -3,11 +3,11 @@ package com.shcherbakov_bogdan.myclip.di
 import android.app.Application
 import androidx.room.Room
 import com.shcherbakov_bogdan.myclip.data.DB_NAME
+import com.shcherbakov_bogdan.myclip.data.Database
 import com.shcherbakov_bogdan.myclip.data.account.AccountDao
 import com.shcherbakov_bogdan.myclip.data.category.CategoryDao
-import com.shcherbakov_bogdan.myclip.data.transactions.TransactionDao
-import com.shcherbakov_bogdan.myclip.data.Database
 import com.shcherbakov_bogdan.myclip.data.remote.Remote
+import com.shcherbakov_bogdan.myclip.data.transactions.TransactionDao
 import com.shcherbakov_bogdan.myclip.utils.BASE_URL
 import dagger.Module
 import dagger.Provides

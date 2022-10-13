@@ -30,11 +30,11 @@ data class Transactions(
 )
 
 
-fun getAmountOfTransaction(transactions: Transactions) : String {
+fun getAmountOfTransaction(transactions: Transactions): String {
     return transactions.amount.toString()
 }
 
-fun getConditionOfTransaction(transactions: Transactions) : Boolean {
+fun getConditionOfTransaction(transactions: Transactions): Boolean {
     if (transactions.condition) {
         return true
     }

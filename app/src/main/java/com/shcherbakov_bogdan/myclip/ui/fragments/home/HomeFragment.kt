@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.shcherbakov_bogdan.myclip.MyClip
-import com.shcherbakov_bogdan.myclip.data.transactions.Transactions
 import com.shcherbakov_bogdan.myclip.databinding.FragmentHomeBinding
-import java.util.*
 import javax.inject.Inject
 
 class HomeFragment : Fragment() {
@@ -19,7 +16,8 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: HomeListAdapter
-    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
     private val viewModel: HomeViewModel by viewModels {
         viewModelFactory
     }
@@ -35,7 +33,7 @@ class HomeFragment : Fragment() {
         adapter = HomeListAdapter(viewModel)
         val layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter =  adapter
+        binding.recyclerView.adapter = adapter
 
 
 

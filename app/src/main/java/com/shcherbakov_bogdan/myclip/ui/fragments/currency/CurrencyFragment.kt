@@ -1,13 +1,12 @@
 package com.shcherbakov_bogdan.myclip.ui.fragments.currency
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.shcherbakov_bogdan.myclip.R
 import com.shcherbakov_bogdan.myclip.databinding.FragmentCurrencyBinding
-import java.util.*
 
 class CurrencyFragment : Fragment() {
 

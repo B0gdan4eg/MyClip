@@ -1,7 +1,7 @@
 package com.shcherbakov_bogdan.myclip.utils
 
 
-fun splitStrDate(str: String, pos: Int) : String {
+fun splitStrDate(str: String, pos: Int): String {
     val strS = str.split(" ") as ArrayList
     when (pos) {
         0 -> return strS[0] //Day of week
