@@ -7,9 +7,18 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.shcherbakov_bogdan.myclip.R
 import com.shcherbakov_bogdan.myclip.data.transactions.*
+import com.shcherbakov_bogdan.myclip.utils.splitStrDate
 
-class HomeListAdapter(private val transactions: List<Transactions>)  : RecyclerView
+class HomeListAdapter(private val viewModel: HomeViewModel)  : RecyclerView
 .Adapter<HomeListAdapter.TransactionViewHolder>() {
+
+    var transactions: List<Transactions> = ArrayList()
+        set(newValue) {
+            field = newValue
+            notifyDataSetChanged()
+        }
+
+
 
     class TransactionViewHolder(layout: ConstraintLayout) : RecyclerView.ViewHolder(layout){
         val expensesTextView: TextView = itemView.findViewById(R.id.expenses)
@@ -34,9 +43,9 @@ class HomeListAdapter(private val transactions: List<Transactions>)  : RecyclerV
             holder.incomeTextView.text = "0.00"
             holder.expensesTextView.text = getAmountOfTransaction(transactions[position])
         }
-        holder.dateDayTextView.text = getTransactionDay(transactions[position])
-        holder.toWeeksTextView.text = ""
-        holder.monthYearTextView.text = getTransactionMonthYear(transactions[position])
+        holder.dateDayTextView.text = splitStrDate((transactions[position].date),2)
+        holder.toWeeksTextView.text = splitStrDate((transactions[position].date),0)
+        holder.monthYearTextView.text = splitStrDate((transactions[position].date),1)
     }
 
     override fun getItemCount(): Int {

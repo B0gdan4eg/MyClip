@@ -5,7 +5,7 @@ import androidx.room.*
 @Dao
 interface TransactionDao {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(transactions: Transactions)
 
     @Update
@@ -15,5 +15,5 @@ interface TransactionDao {
     fun clear(transactions: Transactions)
 
     @Query("SELECT * FROM transactions")
-    fun getAllTransactions()
+    fun getAllTransactions() : List<Transactions>
 }

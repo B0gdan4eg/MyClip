@@ -16,7 +16,4 @@ data class Account(
 
     @ColumnInfo(name = "balance")
     var accountBalance: Double = 0.00,
-
-    @ColumnInfo(name = "transactions")
-    val accountTransactions: MutableList<Transactions>
 )

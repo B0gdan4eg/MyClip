@@ -2,6 +2,8 @@ package com.shcherbakov_bogdan.myclip.ui.fragments.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.room.Insert
+import com.shcherbakov_bogdan.myclip.service.repository.Repository
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton

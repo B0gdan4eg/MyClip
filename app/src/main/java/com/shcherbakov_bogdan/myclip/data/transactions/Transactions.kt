@@ -3,9 +3,6 @@ package com.shcherbakov_bogdan.myclip.data.transactions
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.shcherbakov_bogdan.myclip.data.category.Category
-import com.shcherbakov_bogdan.myclip.utils.getCurrentDateTime
-import java.util.*
 
 @Entity(tableName = "transactions")
 data class Transactions(
@@ -17,25 +14,21 @@ data class Transactions(
     val amount: Double,
 
     @ColumnInfo(name = "date")
-    val date: Date = getCurrentDateTime(),
+    val date: String,
 
     @ColumnInfo(name = "condition")
     val condition: Boolean,
 
     @ColumnInfo(name = "category")
-    val category: Category,
+    val category: Long,
+
+    @ColumnInfo(name = "account")
+    val account: Long,
 
     @ColumnInfo(name = "description")
     val description: String,
 )
 
-fun getTransactionDay(transactions: Transactions) : String {
-    return transactions.date.day.toString()
-}
-
-fun getTransactionMonthYear(transactions: Transactions) : String {
-    return transactions.date.month.toString() + transactions.date.year.toString()
-}
 
 fun getAmountOfTransaction(transactions: Transactions) : String {
     return transactions.amount.toString()
@@ -47,4 +40,3 @@ fun getConditionOfTransaction(transactions: Transactions) : Boolean {
     }
     return false
 }
-
