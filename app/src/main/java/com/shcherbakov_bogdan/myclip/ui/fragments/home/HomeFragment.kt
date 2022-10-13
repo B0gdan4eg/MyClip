@@ -8,10 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.shcherbakov_bogdan.myclip.R
+import com.shcherbakov_bogdan.myclip.data.transactions.Transactions
 import com.shcherbakov_bogdan.myclip.databinding.FragmentHomeBinding
+import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_home.*
 import javax.inject.Inject
 
-class HomeFragment : Fragment() {
+class HomeFragment : DaggerFragment() {
 
 
     private lateinit var binding: FragmentHomeBinding
@@ -23,20 +27,22 @@ class HomeFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.getTransactions()
+            .observe(
+                this.viewLifecycleOwner
+            ) { list -> if (list.isNotEmpty()) initList(list) }
+    }
 
-        adapter = HomeListAdapter(viewModel)
-        val layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView.layoutManager = layoutManager
-        binding.recyclerView.adapter = adapter
-
-
-
-        return binding.root
+    private fun initList(transactions: List<Transactions>) {
+        val adapter = HomeListAdapter(transactions)
+        recyclerView.adapter = adapter
     }
 }

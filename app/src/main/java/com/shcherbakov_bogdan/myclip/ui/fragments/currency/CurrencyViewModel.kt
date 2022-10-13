@@ -8,5 +8,4 @@ class CurrencyViewModel @Inject constructor(
     private val repository: Repository
 ) : ViewModel() {
 
-    fun rates() = repository.rates(1)
 }

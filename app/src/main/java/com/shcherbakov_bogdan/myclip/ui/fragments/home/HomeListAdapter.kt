@@ -11,14 +11,10 @@ import com.shcherbakov_bogdan.myclip.data.transactions.getAmountOfTransaction
 import com.shcherbakov_bogdan.myclip.data.transactions.getConditionOfTransaction
 import com.shcherbakov_bogdan.myclip.utils.splitStrDate
 
-class HomeListAdapter(private val viewModel: HomeViewModel) : RecyclerView
+class HomeListAdapter(private val transactions: List<Transactions>) : RecyclerView
 .Adapter<HomeListAdapter.TransactionViewHolder>() {
 
-    var transactions: List<Transactions> = ArrayList()
-        set(newValue) {
-            field = newValue
-            notifyDataSetChanged()
-        }
+
 
 
     class TransactionViewHolder(layout: ConstraintLayout) : RecyclerView.ViewHolder(layout) {

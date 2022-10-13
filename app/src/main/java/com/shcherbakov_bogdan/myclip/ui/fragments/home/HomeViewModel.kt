@@ -14,21 +14,9 @@ class HomeViewModel
 @Inject constructor(
     private val repository: Repository,
 ) : ViewModel() {
-    private val _transactions = MutableLiveData<List<Transactions>>()
-    val transactions: LiveData<List<Transactions>> = _transactions
 
-    init {
-        MyClip.appComponent.inject(MyClip())
-        getTransactionsList()
-    }
-
-    private fun getTransactionsList() {
-        viewModelScope.launch {
-            val listResult = repository.getTransactionsList()
-            if (listResult != null) {
-                _transactions.value = listResult!!
-            }
-        }
+    fun getTransactions(): LiveData<List<Transactions>> {
+        return repository.getListOfTransactions()
     }
 
 }

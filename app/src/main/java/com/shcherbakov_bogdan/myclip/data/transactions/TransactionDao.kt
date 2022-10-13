@@ -1,19 +1,14 @@
 package com.shcherbakov_bogdan.myclip.data.transactions
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
 interface TransactionDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(transactions: Transactions)
+    fun insert(specialty: List<Transactions>)
 
-    @Update
-    fun update(transactions: Transactions)
-
-    @Delete
-    fun clear(transactions: Transactions)
-
-    @Query("SELECT * FROM transactions")
-    fun getAllTransactions(): List<Transactions>
+    @Query("SELECT * FROM transactions ORDER BY date ASC")
+    fun getListOfTransactions(): LiveData<List<Transactions>>
 }
