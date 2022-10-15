@@ -1,17 +1,12 @@
 package com.shcherbakov_bogdan.myclip.utils
 
-import android.icu.text.SimpleDateFormat
-import android.os.Build
-import androidx.annotation.RequiresApi
-import java.sql.Date
-import java.util.*
 
-@RequiresApi(Build.VERSION_CODES.N)
-fun Date.toString(locale: Locale = Locale.getDefault()): String {
-    val formatter = SimpleDateFormat("dd/MMM/yyyy", locale)
-    return formatter.format(this)
-}
-
-fun getCurrentDateTime(): java.util.Date {
-    return Calendar.getInstance().time
+fun splitStrDate(str: String, pos: Int): String {
+    val strS = str.split(" ") as ArrayList
+    when (pos) {
+        0 -> return strS[0] //Day of week
+        1 -> return strS[1] + ". " + strS[5]  //Month. Year
+        2 -> return strS[2] //Date
+    }
+    return str
 }

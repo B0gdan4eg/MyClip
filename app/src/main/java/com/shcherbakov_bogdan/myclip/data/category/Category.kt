@@ -12,4 +12,4 @@ data class Category(
 
     @ColumnInfo(name = "category_name")
     val name: String,
-    )
+)

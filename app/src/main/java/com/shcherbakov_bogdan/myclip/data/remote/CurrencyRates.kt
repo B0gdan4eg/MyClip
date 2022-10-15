@@ -7,4 +7,4 @@ data class CurrencyRates(
     val Cur_OfficialRate: Double,
     val Cur_Scale: Int,
     val Date: String
-    )
+)

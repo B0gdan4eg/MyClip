@@ -13,10 +13,10 @@
         android:layout_height="match_parent"
         android:textSize="52sp"
         android:text="09"
-        android:textColor="@color/white"
+        android:textColor="@color/mate_grey"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:gravity="start"
         android:id="@+id/to_weeks"
@@ -24,10 +24,10 @@
         android:layout_height="40dp"
         android:text="Friday"
         android:textSize="30sp"
-        android:textColor="@color/grey"
+        android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@id/date_day"
-        />
+        app:layout_constraintStart_toEndOf="@id/date_day" />
+
     <TextView
         android:gravity="start"
         android:id="@+id/month_year"
@@ -35,11 +35,11 @@
         android:layout_height="0dp"
         android:textSize="22sp"
         android:text="sept. 2022"
-        android:textColor="@color/white"
+        android:textColor="@color/mate_grey"
         app:layout_constraintTop_toBottomOf="@id/to_weeks"
         app:layout_constraintStart_toEndOf="@id/date_day"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
+        app:layout_constraintBottom_toBottomOf="parent" />
+
     <TextView
         android:gravity="center"
         android:id="@+id/expenses"
@@ -51,8 +51,8 @@
         app:layout_constraintStart_toEndOf="@id/month_year"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/income"
-        />
+        app:layout_constraintTop_toBottomOf="@id/income" />
+
     <TextView
         android:gravity="center"
         android:id="@+id/income"
@@ -64,8 +64,6 @@
         app:layout_constraintStart_toEndOf="@id/to_weeks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

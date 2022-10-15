@@ -1,19 +1,17 @@
 package com.shcherbakov_bogdan.myclip.data.transactions
 
-import androidx.room.*
+import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 
 @Dao
 interface TransactionDao {
 
-    @Insert
-    fun insert(transactions: Transactions)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(specialty: List<Transactions>)
 
-    @Update
-    fun update(transactions: Transactions)
-
-    @Delete
-    fun clear(transactions: Transactions)
-
-    @Query("SELECT * FROM transactions")
-    fun getAllTransactions(transactions: Transactions)
+    @Query("SELECT * FROM transactions ORDER BY date ASC")
+    fun getListOfTransactions(): MutableList<Transactions>
 }
