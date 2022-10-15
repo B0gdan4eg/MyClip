@@ -15,6 +15,7 @@ class SmsService : Service() {
     override fun onBind(intent: Intent?): IBinder? {
         return null
     }
+
     private fun showNotification(text: String) {
         val contentIntent = PendingIntent.getActivity(
             this, 0, Intent(

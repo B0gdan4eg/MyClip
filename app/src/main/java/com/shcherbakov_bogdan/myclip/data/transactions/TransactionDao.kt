@@ -1,7 +1,10 @@
 package com.shcherbakov_bogdan.myclip.data.transactions
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 
 @Dao
 interface TransactionDao {
@@ -10,5 +13,5 @@ interface TransactionDao {
     fun insert(specialty: List<Transactions>)
 
     @Query("SELECT * FROM transactions ORDER BY date ASC")
-    fun getListOfTransactions(): LiveData<List<Transactions>>
+    fun getListOfTransactions(): MutableList<Transactions>
 }

@@ -5,10 +5,11 @@
     <color name="red">#FF0000</color>
     <color name="green">#006A04</color>
     <color name="grey">#474242</color>
-
-    <color name="mate_black">#0c110b</color>
+    <color name="mate_black">#273248</color>
     <color name="grey_100">#0c110b</color>
-    <color name="mate_grey">#0c110b</color>
-    <color name="green_100">#0c110b</color>
+    <color name="mate_grey">#fc7643</color>
+    <color name="apple_blossom">#af4f41</color>
+    <color name="karry">#ffebd2</color>
+    <color name="atomic_tangerine">#ffa364</color>
 
 </resources>

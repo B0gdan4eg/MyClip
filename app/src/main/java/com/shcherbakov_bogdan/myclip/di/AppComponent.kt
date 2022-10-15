@@ -2,7 +2,6 @@ package com.shcherbakov_bogdan.myclip.di
 
 import android.app.Application
 import com.shcherbakov_bogdan.myclip.MyClip
-import com.shcherbakov_bogdan.myclip.ui.fragments.home.ViewModelFactory
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

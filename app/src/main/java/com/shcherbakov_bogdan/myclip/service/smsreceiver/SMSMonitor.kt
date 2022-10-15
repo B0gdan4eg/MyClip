@@ -19,7 +19,7 @@ class SMSMonitor : BroadcastReceiver() {
             val pduArray = intent.extras!!["pdus"] as Array<ByteArray>?
             val messages: Array<SmsMessage?> = arrayOfNulls<SmsMessage>(pduArray!!.size)
             for (i in pduArray!!.indices) {
-                messages[i] = SmsMessage.createFromPdu(pduArray[i],"")
+                messages[i] = SmsMessage.createFromPdu(pduArray[i], "")
             }
             val smsFrom: String = messages[0]!!.displayOriginatingAddress
             if (smsFrom.equals("RM FIGHT", ignoreCase = true)) {

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.currency.CurrencyFragment"
-    android:background="@drawable/grdient">
+    android:background="@color/mate_black">
 
     <TextView
         android:background="@drawable/rounded_corner_brigtht"

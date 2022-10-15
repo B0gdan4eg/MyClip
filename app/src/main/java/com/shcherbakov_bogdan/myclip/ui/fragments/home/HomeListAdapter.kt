@@ -15,8 +15,6 @@ class HomeListAdapter(private val transactions: List<Transactions>) : RecyclerVi
 .Adapter<HomeListAdapter.TransactionViewHolder>() {
 
 
-
-
     class TransactionViewHolder(layout: ConstraintLayout) : RecyclerView.ViewHolder(layout) {
         val expensesTextView: TextView = itemView.findViewById(R.id.expenses)
         val incomeTextView: TextView = itemView.findViewById(R.id.income)

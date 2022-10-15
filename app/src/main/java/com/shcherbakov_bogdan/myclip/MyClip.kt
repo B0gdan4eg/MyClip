@@ -2,7 +2,6 @@ package com.shcherbakov_bogdan.myclip
 
 import android.app.Application
 import android.content.Context
-import com.shcherbakov_bogdan.myclip.di.AppComponent
 import com.shcherbakov_bogdan.myclip.di.DaggerAppComponent
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -25,6 +24,7 @@ class MyClip : Application(), HasAndroidInjector {
             .build().inject(this)
         RxJavaPlugins.setErrorHandler { it.printStackTrace() }
     }
+
     override fun androidInjector() = dispatchingAndroidInjector
 
     fun Context.getAppComponent(): DaggerAppComponent {
