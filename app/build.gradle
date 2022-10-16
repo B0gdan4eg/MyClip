@@ -4,7 +4,6 @@ plugins {
     id 'org.jetbrains.kotlin.android.extensions'
     id 'kotlin-kapt'
 }
-apply plugin: 'androidx.navigation.safeargs'
 
 android {
     compileSdk 32
@@ -96,6 +95,8 @@ dependencies {
     //navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+
+
 
     //RxJava
     implementation "io.reactivex.rxjava2:rxjava:2.1.14"
