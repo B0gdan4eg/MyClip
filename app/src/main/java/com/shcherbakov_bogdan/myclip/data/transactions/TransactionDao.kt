@@ -10,8 +10,8 @@ import androidx.room.Query
 interface TransactionDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(specialty: List<Transactions>)
+    fun insert(transactions: Transactions)
 
-    @Query("SELECT * FROM transactions ORDER BY date ASC")
-    fun getListOfTransactions(): MutableList<Transactions>
+    @Query("SELECT * FROM transactions")
+    suspend fun getListOfTransactions(): MutableList<Transactions>
 }

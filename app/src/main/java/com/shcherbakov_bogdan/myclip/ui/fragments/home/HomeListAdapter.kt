@@ -11,8 +11,15 @@ import com.shcherbakov_bogdan.myclip.data.transactions.getAmountOfTransaction
 import com.shcherbakov_bogdan.myclip.data.transactions.getConditionOfTransaction
 import com.shcherbakov_bogdan.myclip.utils.splitStrDate
 
-class HomeListAdapter(private val transactions: List<Transactions>) : RecyclerView
+class HomeListAdapter(private val homeViewModel: HomeViewModel) : RecyclerView
 .Adapter<HomeListAdapter.TransactionViewHolder>() {
+
+    private var transactions: List<Transactions> = emptyList()
+
+    fun refreshUsers(transactions: List<Transactions>) {
+        this.transactions = transactions
+        notifyDataSetChanged()
+    }
 
 
     class TransactionViewHolder(layout: ConstraintLayout) : RecyclerView.ViewHolder(layout) {
@@ -39,7 +46,7 @@ class HomeListAdapter(private val transactions: List<Transactions>) : RecyclerVi
             holder.expensesTextView.text = getAmountOfTransaction(transactions[position])
         }
         holder.dateDayTextView.text = splitStrDate((transactions[position].date), 2)
-        holder.toWeeksTextView.text = splitStrDate((transactions[position].date), 0)
+        holder.toWeeksTextView.text = transactions[position].dayOfWeek
         holder.monthYearTextView.text = splitStrDate((transactions[position].date), 1)
     }
 

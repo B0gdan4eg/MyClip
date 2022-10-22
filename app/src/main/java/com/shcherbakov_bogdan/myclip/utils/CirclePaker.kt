@@ -1,5 +1,5 @@
 package com.shcherbakov_bogdan.myclip.utils
-//
+
 //import java.util.*
 //import kotlin.math.*
 //import kotlin.math.pow
@@ -97,17 +97,13 @@ package com.shcherbakov_bogdan.myclip.utils
 //        var cm = min(frontChain.listIterator(), key = lambda x:x.value.distance)
 //        return Triple(nodes, cm, frontChain)
 //}
-//
-//// Generates candidate nodes
-//// d is the signed perpendicular distance of the vector cm to cn
-//// Only the solution with d<0 (i.e. exterior to the front chain) is returned
-//fun candidate_node(cm: Node, radius: Double, front_chain: LinkedList<Node>){
-//    var cn = cm.
-//    if (cn is None) {
-//        cn = front_chain.first
-//    }else{
-//         var (sol1, sol2) = newNode(cm.value,cn.value,radius)
-//    }
+////
+////// Generates candidate nodes
+////// d is the signed perpendicular distance of the vector cm to cn
+////// Only the solution with d<0 (i.e. exterior to the front chain) is returned
+//fun candidate_node(cm: LinkedList<Node>, radius: Double, front_chain: LinkedList<Node>){
+//    var cn = cm.iterator().next()
+//    var (sol1, sol2) = newNode(cm.value,cn.value,radius)
 //    var d = (sol1.x-cm.value.x)*(cn.value.y-cm.value.y)-(sol1.y-cm.value.y)*(cn.value.x-cm.value.x)
 //    return if (d < 0) {
 //        sol1

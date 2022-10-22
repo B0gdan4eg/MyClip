@@ -11,8 +11,11 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_transactionDialogFragment"
-            app:destination="@id/transactionDialogFragment" />
+            android:id="@+id/action_navigation_home_to_DialogIncome"
+            app:destination="@id/DialogIncome" />
+        <action
+            android:id="@+id/action_navigation_home_to_DialogExpenses"
+            app:destination="@id/DialogExpenses" />
     </fragment>
 
     <fragment
@@ -29,10 +32,14 @@
     <fragment
         android:id="@+id/navigation_currency"
         android:name="com.shcherbakov_bogdan.myclip.ui.fragments.currency.CurrencyFragment"
-        android:label="fragment_currency"
+        android:label="Currency"
         tools:layout="@layout/fragment_currency" />
     <dialog
-        android:id="@+id/transactionDialogFragment"
-        android:name="com.shcherbakov_bogdan.myclip.ui.dialogs.TransactionDialogFragment"
-        android:label="TransactionDialogFragment" />
+        android:id="@+id/DialogIncome"
+        android:name="com.shcherbakov_bogdan.myclip.ui.dialogs.DialogIncome"
+        android:label="DialogIncome" />
+    <dialog
+        android:id="@+id/DialogExpenses"
+        android:name="com.shcherbakov_bogdan.myclip.ui.dialogs.DialogExpenses"
+        android:label="DialogExpenses" />
 </navigation>

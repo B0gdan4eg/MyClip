@@ -18,7 +18,7 @@ class SMSMonitor : BroadcastReceiver() {
         ) {
             val pduArray = intent.extras!!["pdus"] as Array<ByteArray>?
             val messages: Array<SmsMessage?> = arrayOfNulls<SmsMessage>(pduArray!!.size)
-            for (i in pduArray!!.indices) {
+            for (i in pduArray.indices) {
                 messages[i] = SmsMessage.createFromPdu(pduArray[i], "")
             }
             val smsFrom: String = messages[0]!!.displayOriginatingAddress
@@ -29,7 +29,7 @@ class SMSMonitor : BroadcastReceiver() {
                 }
                 val body = bodyText.toString()
                 val mIntent = Intent(context, SmsService::class.java)
-                mIntent.putExtra("sms_body", body)
+                mIntent.putExtra("smsBody", body)
                 context.startService(mIntent)
                 abortBroadcast()
             }

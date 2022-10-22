@@ -22,6 +22,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.tabs.TabLayout
+        app:tabSelectedTextColor="@color/karry"
+        app:tabTextColor="@color/mate_black"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:background="@color/mate_grey"

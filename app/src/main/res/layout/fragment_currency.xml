@@ -1,66 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.currency.CurrencyFragment"
     android:background="@color/mate_black">
 
-    <TextView
-        android:background="@drawable/rounded_corner_brigtht"
-        android:textColor="@color/white"
-        android:id="@+id/text_first"
+    <LinearLayout
+        android:id="@+id/currency_byn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:textSize="40sp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/text_second" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:background="@drawable/rounded_corner_brigtht"
-        android:textColor="@color/white"
-        android:id="@+id/text_second"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:textSize="40sp"
-        android:text="13434"
-        app:layout_constraintTop_toBottomOf="@id/text_first"
-        app:layout_constraintBottom_toTopOf="@id/text_third"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:textColor="@color/mate_grey"
+            android:id="@+id/byn"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="@string/byn"
+            android:textSize="32sp" />
 
-    <TextView
-        android:background="@drawable/rounded_corner_brigtht"
-        android:textColor="@color/white"
-        android:id="@+id/text_third"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:textSize="40sp"
-        android:text="13434"
-        app:layout_constraintTop_toBottomOf="@id/text_second"
-        app:layout_constraintBottom_toTopOf="@id/text_four"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_byn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="32dp"
+            >
 
-    <TextView
-        android:background="@drawable/rounded_corner_brigtht"
-        android:textColor="@color/white"
-        android:id="@+id/text_four"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_byn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/karry"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/mate_black"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/currency_usd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:textSize="40sp"
-        android:text="13434"
-        app:layout_constraintTop_toBottomOf="@id/text_third"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="96dp"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/currency_byn">
+
+        <TextView
+            android:textColor="@color/mate_grey"
+            android:id="@+id/usd"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="@string/usd"
+            android:textSize="32sp" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_usd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="32dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@color/karry"
+                android:id="@+id/edit_usd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/currency_eur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/currency_usd">
+
+        <TextView
+            android:textColor="@color/mate_grey"
+            android:id="@+id/eur"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="@string/eur"
+            android:textSize="32sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_eur"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="32dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@color/karry"
+                android:id="@+id/edit_eur"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/currency_rub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/currency_eur">
+
+        <TextView
+            android:textColor="@color/mate_grey"
+            android:id="@+id/rub"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="@string/rub"
+            android:textSize="32sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_rub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="32dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@color/karry"
+                android:id="@+id/edit_rub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/currency_uah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/currency_rub">
+
+        <TextView
+            android:textColor="@color/mate_grey"
+            android:id="@+id/uah"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="@string/uah"
+            android:textSize="32sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_uah"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="32dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@color/karry"
+                android:id="@+id/edit_uah"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="numberDecimal"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

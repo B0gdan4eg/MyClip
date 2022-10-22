@@ -28,12 +28,15 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.16979166666666667" />
         <entry key="app/src/main/res/layout/fragment_currency.xml" value="0.17119565217391305" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.11816939890710383" />
         <entry key="app/src/main/res/layout/fragment_inbox.xml" value="0.17119565217391305" />
         <entry key="app/src/main/res/layout/fragment_report.xml" value="0.17119565217391305" />
         <entry key="app/src/main/res/layout/item_account.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_transaction.xml" value="0.2529818725585938" />
-        <entry key="app/src/main/res/layout/transaction_dialog.xml" value="0.2108074685801631" />
+        <entry key="app/src/main/res/layout/test.xml" value="0.15670289855072464" />
+        <entry key="app/src/main/res/layout/transaction_dialog.xml" value="0.23412628173828126" />
+        <entry key="app/src/main/res/layout/transaction_expenses_dialog.xml" value="0.17119565217391305" />
+        <entry key="app/src/main/res/layout/transaction_income_dialog.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.18385416666666668" />
       </map>
     </option>

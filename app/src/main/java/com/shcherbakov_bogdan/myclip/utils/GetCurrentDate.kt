@@ -1,5 +1,7 @@
 package com.shcherbakov_bogdan.myclip.utils
 
+import kotlin.collections.ArrayList
+
 
 fun splitStrDate(str: String, pos: Int): String {
     val strS = str.split(" ") as ArrayList

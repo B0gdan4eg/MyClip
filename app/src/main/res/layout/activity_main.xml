@@ -10,6 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/mate_grey"
+        app:itemRippleColor="@color/karry"
         app:itemIconTint="@color/mate_black"
         app:itemTextColor="@color/mate_black"
         app:layout_constraintBottom_toBottomOf="parent"

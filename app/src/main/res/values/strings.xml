@@ -9,4 +9,10 @@
     <string name="income">Income</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="byn">BYN</string>
+    <string name="usd">USD</string>
+    <string name="eur">EUR</string>
+    <string name="rub">RUB</string>
+    <string name="uah">UAH</string>
+    <string name="expenses">Expenses</string>
 </resources>
