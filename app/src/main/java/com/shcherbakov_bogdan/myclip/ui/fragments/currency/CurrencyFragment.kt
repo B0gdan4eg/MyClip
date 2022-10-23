@@ -36,6 +36,7 @@ class CurrencyFragment : DaggerFragment() {
         setEditTextObserver(binding.textRub.editText)
         setEditTextObserver(binding.textUah.editText)
 
+
         return binding.root
     }
 

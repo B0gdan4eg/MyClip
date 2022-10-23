@@ -10,6 +10,8 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3285" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.3285" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3285" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.327" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/drawable/ic_logo2.xml" value="0.3225" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.3285" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/drawable/rounded_corner.xml" value="0.3285" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -17,6 +19,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/layout/fragment_dashboard.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/layout/fragment_inbox.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/layout/motion_layout.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3285" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyClip/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3285" />
