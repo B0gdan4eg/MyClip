@@ -11,8 +11,15 @@ data class Account(
     var id: Long = 0L,
 
     @ColumnInfo(name = "name")
-    val accountName: String,
+    val name: String,
 
     @ColumnInfo(name = "balance")
-    var accountBalance: Double = 0.00,
-)
+    var balance: Double = 0.00,
+
+    @ColumnInfo(name = "icon")
+    val icon: String = "@drawable/ic_baseline_description"
+) {
+    override fun toString(): String {
+        return "$id $name $balance $icon"
+    }
+}

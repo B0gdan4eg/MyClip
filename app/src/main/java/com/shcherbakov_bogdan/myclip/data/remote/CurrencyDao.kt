@@ -12,7 +12,7 @@ interface CurrencyDao {
     suspend fun insert(currencyRates: List<CurrencyRates>)
 
     @Query("SELECT * FROM currency")
-    suspend fun getListOfCurrency(): MutableList<CurrencyRates>
+    suspend fun getListOfCurrency(): List<CurrencyRates>
 
     @Query("DELETE FROM currency")
     suspend fun deleteAllCurrencies()

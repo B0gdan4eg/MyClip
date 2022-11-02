@@ -13,6 +13,8 @@ import com.shcherbakov_bogdan.myclip.databinding.FragmentCurrencyBinding
 import com.shcherbakov_bogdan.myclip.utils.Rates
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
+import kotlin.math.floor
+import kotlin.math.roundToInt
 
 class CurrencyFragment : DaggerFragment() {
 
@@ -40,7 +42,7 @@ class CurrencyFragment : DaggerFragment() {
         return binding.root
     }
 
-    //Получаем позицию поля для связи с вьюмоделью
+
     private fun getEditPosition(editText: EditText?): Rates {
         return when (editText?.id) {
             R.id.edit_usd -> Rates.USD
@@ -52,29 +54,31 @@ class CurrencyFragment : DaggerFragment() {
         }
     }
 
-    //Подписываемся на изменения количества валюты в поле
+    private fun round(double: Double) : String{
+        return ((double * 100).roundToInt() / 100.0).toString()
+    }
+
     private fun setEditTextObserver(editText: EditText?) {
         when (editText?.id) {
             R.id.edit_byn -> viewModel.bynAmount.observe(viewLifecycleOwner) {
-                editText.setText(it.toString())
+                editText.setText(round(it))
             }
             R.id.edit_usd -> viewModel.usdAmount.observe(viewLifecycleOwner) {
-                editText.setText(it.toString())
+                editText.setText(round(it))
             }
             R.id.edit_eur -> viewModel.eurAmount.observe(viewLifecycleOwner) {
-                editText.setText(it.toString())
+                editText.setText(round(it))
             }
             R.id.edit_rub -> viewModel.rubAmount.observe(viewLifecycleOwner) {
-                editText.setText(it.toString())
+                editText.setText(round(it))
             }
             R.id.edit_uah -> viewModel.uahAmount.observe(viewLifecycleOwner) {
-                editText.setText(it.toString())
+                editText.setText(round(it))
             }
         }
         setEditChangeListener(editText)
     }
 
-    //Устанавливаем слушатель изменения текста в каждом поле
     private fun setEditChangeListener(editText: EditText?) {
         editText?.doAfterTextChanged { text ->
             if(editText.isFocused){

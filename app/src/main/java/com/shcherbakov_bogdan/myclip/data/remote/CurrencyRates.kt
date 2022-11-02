@@ -9,22 +9,22 @@ data class CurrencyRates(
 
     @PrimaryKey
     @Json(name = "Cur_ID")
-    val id: Int,
+    var id: Int,
 
     @Json(name = "Date")
-    val date: String,
+    var date: String,
 
     @Json(name = "Cur_Abbreviation")
-    val abbreviation: String,
+    var abbreviation: String,
 
     @Json(name = "Cur_Scale")
-    val scale: Int,
+    var scale: Int,
 
     @Json(name = "Cur_Name")
-    val name: String,
+    var name: String,
 
     @Json(name = "Cur_OfficialRate")
-    val rate: Double,
+    var rate: Double,
 
 
 ) {

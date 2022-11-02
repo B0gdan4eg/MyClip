@@ -37,9 +37,31 @@
     <dialog
         android:id="@+id/DialogIncome"
         android:name="com.shcherbakov_bogdan.myclip.ui.dialogs.DialogIncome"
-        android:label="DialogIncome" />
+        android:label="DialogIncome" >
+        <action
+            android:id="@+id/action_DialogIncome_to_dialogAccount"
+            app:destination="@id/dialogAccount" />
+        <action
+            android:id="@+id/action_DialogIncome_to_dialogCategory"
+            app:destination="@id/dialogCategory" />
+    </dialog>
     <dialog
         android:id="@+id/DialogExpenses"
         android:name="com.shcherbakov_bogdan.myclip.ui.dialogs.DialogExpenses"
-        android:label="DialogExpenses" />
+        android:label="DialogExpenses" >
+        <action
+            android:id="@+id/action_DialogExpenses_to_dialogAccount"
+            app:destination="@id/dialogAccount" />
+        <action
+            android:id="@+id/action_DialogExpenses_to_dialogCategory"
+            app:destination="@id/dialogCategory" />
+    </dialog>
+    <dialog
+        android:id="@+id/dialogAccount"
+        android:name="com.shcherbakov_bogdan.myclip.ui.dialogs.account.DialogAccount"
+        android:label="DialogAccount" />
+    <dialog
+        android:id="@+id/dialogCategory"
+        android:name="com.shcherbakov_bogdan.myclip.ui.dialogs.category.DialogCategory"
+        android:label="DialogCategory" />
 </navigation>

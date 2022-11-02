@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_corner">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/date_day"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:textSize="52sp"
+        android:text="09"
+        android:textColor="@color/mate_grey"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:gravity="start"
+        android:id="@+id/to_weeks"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="Friday"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/date_day" />
+
+    <TextView
+        android:gravity="start"
+        android:id="@+id/month_year"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:textSize="22sp"
+        android:text="sept. 2022"
+        android:textColor="@color/mate_grey"
+        app:layout_constraintTop_toBottomOf="@id/to_weeks"
+        app:layout_constraintStart_toEndOf="@id/date_day"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/expenses"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="22sp"
+        android:text="0,00Br"
+        android:textColor="@color/red"
+        app:layout_constraintStart_toEndOf="@id/month_year"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/income" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/income"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:textSize="22sp"
+        android:textColor="@color/green"
+        android:text="0,00Br"
+        app:layout_constraintStart_toEndOf="@id/to_weeks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

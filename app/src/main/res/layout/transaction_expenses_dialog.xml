@@ -5,10 +5,10 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="16dp"
-    app:cardCornerRadius="24dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
+    app:cardCornerRadius="16dp"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,8 +33,10 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:hint="@string/amount"
             android:padding="16dp"
             android:inputType="numberDecimal"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/condition_textView" />
 
@@ -56,7 +58,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Wallet"
+            android:layout_marginEnd="16dp"
+            android:text="Choose your account"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/amount_editText" />
@@ -79,7 +82,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Cash"
+            android:layout_marginEnd="16dp"
+            android:text="Choose category"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/account_textView" />
@@ -101,7 +105,8 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-
+            android:layout_marginEnd="16dp"
+            android:hint="@string/description"
             android:padding="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/category_textView" />
@@ -117,22 +122,48 @@
             app:layout_constraintEnd_toStartOf="@id/description_editText"
             app:layout_constraintTop_toTopOf="@id/description_editText"
             app:tint="@color/mate_black"/>
+        <TextView
+            android:textColor="@color/mate_black"
+            android:id="@+id/date_picker"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/date"
+            android:textSize="24sp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_editText" />
+        <ImageView
+            android:id="@+id/image_date_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_edit_date"
+            app:layout_constraintBottom_toBottomOf="@id/date_picker"
+            app:layout_constraintEnd_toStartOf="@id/date_picker"
+            app:layout_constraintTop_toTopOf="@id/date_picker"
+            app:tint="@color/mate_black"/>
+
 
         <Button
             android:id="@+id/save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/save"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description_editText" />
+            app:layout_constraintTop_toBottomOf="@id/date_picker" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/cancel"
             app:layout_constraintEnd_toStartOf="@id/save_button"
-            app:layout_constraintTop_toBottomOf="@id/description_editText" />
+            app:layout_constraintTop_toBottomOf="@id/date_picker" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

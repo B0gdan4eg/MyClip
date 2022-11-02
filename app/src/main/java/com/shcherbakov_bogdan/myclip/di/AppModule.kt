@@ -42,7 +42,8 @@ class AppModule {
         return Room
             .databaseBuilder(app, MyDatabase::class.java, DB_NAME)
             .fallbackToDestructiveMigration()
-            .createFromAsset("finance.db").build()
+            .createFromAsset("finance.db")
+            .build()
     }
 
     @Singleton

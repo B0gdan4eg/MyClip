@@ -11,6 +11,7 @@ import com.shcherbakov_bogdan.myclip.service.repository.Repository
 import com.shcherbakov_bogdan.myclip.utils.Const
 import com.shcherbakov_bogdan.myclip.utils.Rates
 import kotlinx.coroutines.launch
+import java.io.IOException
 import javax.inject.Inject
 import kotlin.properties.Delegates
 
@@ -21,6 +22,7 @@ class CurrencyViewModel @Inject constructor(
     init {
         getCurrencies()
     }
+
 
     private var usdRate = Const.BASE_RATE
     private var eurRate = Const.BASE_RATE
@@ -93,21 +95,40 @@ class CurrencyViewModel @Inject constructor(
         viewModelScope.launch {
             repository.updateCurrencyFromRemote()
             val listResult = repository.getCurrencies()
-            if (listResult != null){
+            if (!(listResult.isNullOrEmpty())) {
                 setCurrencies(listResult)
+            } else {
+                Log.e(TAG, "failed set")
             }
         }
     }
 
     private fun setCurrencies(currencyRates: List<CurrencyRates>){
+        Log.e(TAG,"set")
         for (currency in currencyRates) {
-            when (currency.abbreviation) {
-                Rates.USD.name -> usdRate = currency.rate
-                Rates.EUR.name -> eurRate = currency.rate
-                Rates.RUB.name -> rubRate = currency.rate.div(100)
-                Rates.UAH.name -> uahRate = currency.rate.div(100)
+            when (currency.id) {
+                431 -> {
+                    usdRate = currency.rate
+                    Log.e(TAG,"${currency.rate}")
+                }
+                451 -> {
+                    eurRate = currency.rate
+                    Log.e(TAG,"${currency.rate}")
+                }
+                456 -> {
+                    rubRate = currency.rate.div(100)
+                    Log.e(TAG,"${currency.rate}")
+                }
+                449 -> {
+                    uahRate = currency.rate.div(100)
+                    Log.e(TAG,"${currency.rate}")
+                }
             }
         }
+        updateAmount(Rates.USD)
+        updateAmount(Rates.EUR)
+        updateAmount(Rates.RUB)
+        updateAmount(Rates.UAH)
     }
 
     companion object {

@@ -15,4 +15,12 @@
     <string name="rub">RUB</string>
     <string name="uah">UAH</string>
     <string name="expenses">Expenses</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="category">Category</string>
+    <string name="account">Account</string>
+    <string name="date">Date</string>
+    <string name="amount">amount</string>
+    <string name="description">description</string>
 </resources>

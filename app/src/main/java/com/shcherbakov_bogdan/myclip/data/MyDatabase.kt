@@ -26,7 +26,11 @@ const val DB_NAME = "finance.db"
 
 @Database(
     entities = [
-        Transactions::class, Account::class, Category::class, TransactionFromSms::class, CurrencyRates::class],
+        Transactions::class,
+        Account::class,
+        Category::class,
+        TransactionFromSms::class,
+        CurrencyRates::class,],
     version = 1,
     exportSchema = false
 )

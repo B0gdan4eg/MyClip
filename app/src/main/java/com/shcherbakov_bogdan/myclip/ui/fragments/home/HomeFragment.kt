@@ -16,6 +16,7 @@ import com.shcherbakov_bogdan.myclip.data.transactions.Transactions
 import com.shcherbakov_bogdan.myclip.databinding.FragmentHomeBinding
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.fragment_home.*
+import java.util.*
 import javax.inject.Inject
 
 class HomeFragment : DaggerFragment() {
