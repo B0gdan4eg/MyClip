@@ -41,7 +41,7 @@ class ApiTest {
             try {
                 response = remote.getExchangeRate("USD")
                 latch.countDown()
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Log.e("ApiTest", "failed getNewBooks")
             }
         }
@@ -52,7 +52,7 @@ class ApiTest {
         }
         println(response.toString())
         assert(response?.id == 431)
-        assert(response!= null)
+        assert(response != null)
         assertTrue(response?.abbreviation == "USD")
     }
 }

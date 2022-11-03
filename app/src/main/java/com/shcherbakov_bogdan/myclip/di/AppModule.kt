@@ -15,10 +15,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
-import io.reactivex.schedulers.Schedulers
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
@@ -41,7 +38,6 @@ class AppModule {
     fun provideDb(app: Application): MyDatabase {
         return Room
             .databaseBuilder(app, MyDatabase::class.java, DB_NAME)
-            .fallbackToDestructiveMigration()
             .createFromAsset("finance.db")
             .build()
     }

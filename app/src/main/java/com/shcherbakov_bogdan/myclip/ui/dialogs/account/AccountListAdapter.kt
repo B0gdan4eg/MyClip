@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.shcherbakov_bogdan.myclip.R
 import com.shcherbakov_bogdan.myclip.data.account.Account
 
-class AccountListAdapter(private val context: Context, private val viewModel: AccountViewModel) : RecyclerView.Adapter<AccountListAdapter.AccountViewHolder>() {
+class AccountListAdapter(private val context: Context, private val viewModel: AccountViewModel) :
+    RecyclerView.Adapter<AccountListAdapter.AccountViewHolder>() {
 
     private var accounts: List<Account> = emptyList()
 
@@ -28,14 +29,16 @@ class AccountListAdapter(private val context: Context, private val viewModel: Ac
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountViewHolder {
         return AccountViewHolder(
-                LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_account, parent, false) as ConstraintLayout
-                )
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_account, parent, false) as ConstraintLayout
+        )
     }
 
     override fun onBindViewHolder(holder: AccountViewHolder, position: Int) {
-        val resourceId = context.resources.getIdentifier(accounts[position].icon,"drawable",
-        context.packageName)
+        val resourceId = context.resources.getIdentifier(
+            accounts[position].icon, "drawable",
+            context.packageName
+        )
         holder.icon.setImageResource(resourceId)
         holder.icon.setImageDrawable(Drawable.createFromPath(accounts[position].icon))
         holder.balance.text = accounts[position].balance.toString()
@@ -43,6 +46,6 @@ class AccountListAdapter(private val context: Context, private val viewModel: Ac
     }
 
     override fun getItemCount(): Int {
-        return  accounts.size
+        return accounts.size
     }
 }
