@@ -27,7 +27,7 @@ data class CurrencyRates(
     var rate: Double,
 
 
-) {
+    ) {
     override fun toString(): String {
         return "$id $date $abbreviation $scale $name $rate"
     }

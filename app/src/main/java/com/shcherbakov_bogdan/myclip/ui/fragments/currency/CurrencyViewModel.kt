@@ -6,14 +6,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shcherbakov_bogdan.myclip.data.remote.CurrencyRates
-import com.shcherbakov_bogdan.myclip.data.transactions.Transactions
 import com.shcherbakov_bogdan.myclip.service.repository.Repository
 import com.shcherbakov_bogdan.myclip.utils.Const
 import com.shcherbakov_bogdan.myclip.utils.Rates
 import kotlinx.coroutines.launch
-import java.io.IOException
 import javax.inject.Inject
-import kotlin.properties.Delegates
 
 class CurrencyViewModel @Inject constructor(
     private val repository: Repository
@@ -103,25 +100,25 @@ class CurrencyViewModel @Inject constructor(
         }
     }
 
-    private fun setCurrencies(currencyRates: List<CurrencyRates>){
-        Log.e(TAG,"set")
+    private fun setCurrencies(currencyRates: List<CurrencyRates>) {
+        Log.e(TAG, "set")
         for (currency in currencyRates) {
             when (currency.id) {
                 431 -> {
                     usdRate = currency.rate
-                    Log.e(TAG,"${currency.rate}")
+                    Log.e(TAG, "${currency.rate}")
                 }
                 451 -> {
                     eurRate = currency.rate
-                    Log.e(TAG,"${currency.rate}")
+                    Log.e(TAG, "${currency.rate}")
                 }
                 456 -> {
                     rubRate = currency.rate.div(100)
-                    Log.e(TAG,"${currency.rate}")
+                    Log.e(TAG, "${currency.rate}")
                 }
                 449 -> {
                     uahRate = currency.rate.div(100)
-                    Log.e(TAG,"${currency.rate}")
+                    Log.e(TAG, "${currency.rate}")
                 }
             }
         }

@@ -13,12 +13,12 @@ import com.shcherbakov_bogdan.myclip.databinding.FragmentCurrencyBinding
 import com.shcherbakov_bogdan.myclip.utils.Rates
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
-import kotlin.math.floor
 import kotlin.math.roundToInt
 
 class CurrencyFragment : DaggerFragment() {
 
     private lateinit var binding: FragmentCurrencyBinding
+
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
@@ -54,7 +54,7 @@ class CurrencyFragment : DaggerFragment() {
         }
     }
 
-    private fun round(double: Double) : String{
+    private fun round(double: Double): String {
         return ((double * 100).roundToInt() / 100.0).toString()
     }
 
@@ -81,7 +81,7 @@ class CurrencyFragment : DaggerFragment() {
 
     private fun setEditChangeListener(editText: EditText?) {
         editText?.doAfterTextChanged { text ->
-            if(editText.isFocused){
+            if (editText.isFocused) {
                 try {
                     val amount = text.toString()
                     if (amount.length == 2 && amount[0] == '0') {

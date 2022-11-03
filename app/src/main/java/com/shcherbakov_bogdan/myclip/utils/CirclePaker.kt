@@ -1,6 +1,7 @@
 package com.shcherbakov_bogdan.myclip.utils
 
-import java.lang.Math.*
+import java.lang.Math.acos
+import java.lang.Math.atan2
 import java.util.*
 import kotlin.math.pow
 
@@ -40,8 +41,13 @@ fun newNode(cm: Node, cn: Node, radius: Double): List<Node> {
 }
 
 // Calculates the position of the first three nodes and recenters the configuration around the origin.
-fun initialise(r0: Double, r1: Double, r2: Double): Triple<MutableList<Node>, Node, LinkedList<Node>> {
-    val nodes: MutableList<Node> = mutableListOf(Node(0.00, 0.00, r0, 0.00), Node(r0 + r1, 0.00, r1, 0.00))
+fun initialise(
+    r0: Double,
+    r1: Double,
+    r2: Double
+): Triple<MutableList<Node>, Node, LinkedList<Node>> {
+    val nodes: MutableList<Node> =
+        mutableListOf(Node(0.00, 0.00, r0, 0.00), Node(r0 + r1, 0.00, r1, 0.00))
     val (sol1, sol2) = newNode(nodes[0], nodes[1], r2)
     if (sol1.y < 0) {
         nodes.add(sol1)
@@ -73,9 +79,9 @@ fun initialise(r0: Double, r1: Double, r2: Double): Triple<MutableList<Node>, No
         node.distance = distanceFromOrigin(node)
     }
     val frontChain: LinkedList<Node> = LinkedList(nodes)
-    var cm = frontChain.minByOrNull{ it.distance }
+    var cm = frontChain.minByOrNull { it.distance }
     if (cm == null) {
-        cm = Node(1.0,1.0,1.0,1.0)
+        cm = Node(1.0, 1.0, 1.0, 1.0)
     }
     return Triple(nodes, cm, frontChain)
 }
@@ -110,14 +116,19 @@ fun checkIntersect(condidate: Node, cm: Node, frontChain: LinkedList<Node>): Pai
     var intersectingNode: Node? = null
     var direction = 0
     val intersectingNodes =
-        frontChain.filter { distanceNodes(condidate, it) - (it.radius + condidate.radius) < -0.00000001 }
+        frontChain.filter {
+            distanceNodes(
+                condidate,
+                it
+            ) - (it.radius + condidate.radius) < -0.00000001
+        }
     if (intersectingNodes.isEmpty()) {
         return Pair(intersectingNode, direction)
     }
     val totalDistance = frontChain.sumOf { it.radius * 2 }
     val distances: MutableList<List<Double>> = mutableListOf()
     for (node in intersectingNodes) {
-        distances.add(distanceToNode(node, cm,cn, frontChain, totalDistance))
+        distances.add(distanceToNode(node, cm, cn, frontChain, totalDistance))
     }
     var minDistance = distances[0]
     var minIndex = 0
@@ -137,7 +148,13 @@ fun checkIntersect(condidate: Node, cm: Node, frontChain: LinkedList<Node>): Pai
 }
 
 // Computes the distance traversed from to_node to cm/cn along the front chain
-fun distanceToNode(toNode: Node, cm: Node, cn: Node, frontChain: LinkedList<Node>, totalDistance: Double): List<Double> {
+fun distanceToNode(
+    toNode: Node,
+    cm: Node,
+    cn: Node,
+    frontChain: LinkedList<Node>,
+    totalDistance: Double
+): List<Double> {
     var cmBackwardDistance = cn //мб сn не надо передавать , тк в коде его нет
     var currentNode = cm
     while (true) {
