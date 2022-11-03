@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.shcherbakov_bogdan.myclip.ui.fragments.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_navigation_home_to_DialogIncome"
             app:destination="@id/DialogIncome" />
@@ -37,7 +37,7 @@
     <dialog
         android:id="@+id/DialogIncome"
         android:name="com.shcherbakov_bogdan.myclip.ui.dialogs.DialogIncome"
-        android:label="DialogIncome" >
+        android:label="DialogIncome">
         <action
             android:id="@+id/action_DialogIncome_to_dialogAccount"
             app:destination="@id/dialogAccount" />
@@ -48,7 +48,7 @@
     <dialog
         android:id="@+id/DialogExpenses"
         android:name="com.shcherbakov_bogdan.myclip.ui.dialogs.DialogExpenses"
-        android:label="DialogExpenses" >
+        android:label="DialogExpenses">
         <action
             android:id="@+id/action_DialogExpenses_to_dialogAccount"
             app:destination="@id/dialogAccount" />

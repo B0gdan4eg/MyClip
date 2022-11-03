@@ -40,6 +40,7 @@
         <entry key="app/src/main/res/layout/item_account.xml" value="0.24951782226562502" />
         <entry key="app/src/main/res/layout/item_category.xml" value="0.17119565217391305" />
         <entry key="app/src/main/res/layout/item_transaction.xml" value="0.2529818725585938" />
+        <entry key="app/src/main/res/layout/item_transaction_from_sms.xml" value="0.17119565217391305" />
         <entry key="app/src/main/res/layout/splash_screen.xml" value="0.21472019464720193" />
         <entry key="app/src/main/res/layout/test.xml" value="0.15670289855072464" />
         <entry key="app/src/main/res/layout/transaction_dialog.xml" value="0.23412628173828126" />

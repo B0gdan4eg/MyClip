@@ -4,39 +4,53 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.shcherbakov_bogdan.myclip.data.sms.TransactionFromSms
 import com.shcherbakov_bogdan.myclip.databinding.FragmentInboxBinding
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-class InboxFragment : Fragment() {
+class InboxFragment : DaggerFragment() {
 
-    private var _binding: FragmentInboxBinding? = null
+    private lateinit var binding: FragmentInboxBinding
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    private val viewModel: InboxViewModel by viewModels {
+        viewModelFactory
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(InboxViewModel::class.java)
-
-        _binding = FragmentInboxBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textInbox
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        binding = FragmentInboxBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentInboxBinding.bind(view)
+
+        val adapter = InboxListAdapter(viewModel)
+        binding.recyclerViewInbox.layoutManager = LinearLayoutManager(activity)
+        binding.recyclerViewInbox.adapter = adapter
+        binding.recyclerViewInbox.addItemDecoration(
+            DividerItemDecoration(
+                requireContext(),
+                DividerItemDecoration.VERTICAL
+            )
+        )
+
+        viewModel.smsTransactions.observe(viewLifecycleOwner, Observer<List<TransactionFromSms>> {
+            adapter.refreshList(it)
+        })
     }
 }
