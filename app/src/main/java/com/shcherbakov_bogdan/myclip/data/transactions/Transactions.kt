@@ -3,7 +3,6 @@ package com.shcherbakov_bogdan.myclip.data.transactions
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.time.DayOfWeek
 
 @Entity(tableName = "transactions")
 data class Transactions(
