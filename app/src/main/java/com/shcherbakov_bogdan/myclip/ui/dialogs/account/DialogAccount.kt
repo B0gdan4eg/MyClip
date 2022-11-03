@@ -44,7 +44,12 @@ class DialogAccount : DaggerDialogFragment() {
 
         binding.accountList.layoutManager = LinearLayoutManager(activity)
         binding.accountList.adapter = adapter
-        binding.accountList.addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+        binding.accountList.addItemDecoration(
+            DividerItemDecoration(
+                requireContext(),
+                DividerItemDecoration.VERTICAL
+            )
+        )
 
         viewModel.accounts.observe(viewLifecycleOwner, Observer<List<Account>>
         {
