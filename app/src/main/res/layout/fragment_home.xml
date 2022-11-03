@@ -24,8 +24,7 @@
         android:src="@drawable/ic_add_button"
         app:backgroundTint="@color/mate_grey"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-         />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_first"
@@ -36,7 +35,7 @@
         android:src="@drawable/ic_baseline_arrow_downward"
         android:backgroundTint="@color/atomic_tangerine"
         android:layout_margin="16dp"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_second"
@@ -47,7 +46,7 @@
         android:backgroundTint="@color/atomic_tangerine"
         android:src="@drawable/ic_baseline_arrow_upward"
         android:layout_margin="16dp"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

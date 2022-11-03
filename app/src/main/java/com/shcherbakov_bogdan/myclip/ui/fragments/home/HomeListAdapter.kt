@@ -9,6 +9,8 @@ import com.shcherbakov_bogdan.myclip.R
 import com.shcherbakov_bogdan.myclip.data.transactions.Transactions
 import com.shcherbakov_bogdan.myclip.data.transactions.getAmountOfTransaction
 import com.shcherbakov_bogdan.myclip.data.transactions.getConditionOfTransaction
+import com.shcherbakov_bogdan.myclip.utils.Const
+import com.shcherbakov_bogdan.myclip.utils.getDate
 import com.shcherbakov_bogdan.myclip.utils.splitStrDate
 
 class HomeListAdapter(private val homeViewModel: HomeViewModel) : RecyclerView
@@ -45,9 +47,13 @@ class HomeListAdapter(private val homeViewModel: HomeViewModel) : RecyclerView
             holder.incomeTextView.text = "0.00"
             holder.expensesTextView.text = getAmountOfTransaction(transactions[position])
         }
-        holder.dateDayTextView.text = splitStrDate((transactions[position].date), 2)
+        holder.dateDayTextView.text = splitStrDate(
+            getDate(transactions[position].date.toLong(), Const.DATE_FORMAT),
+            0
+        )
         holder.toWeeksTextView.text = transactions[position].dayOfWeek
-        holder.monthYearTextView.text = splitStrDate((transactions[position].date), 1)
+        holder.monthYearTextView.text =
+            getDate(transactions[position].date.toLong(), Const.DATE_FORMAT_FOR_LIST)
     }
 
     override fun getItemCount(): Int {

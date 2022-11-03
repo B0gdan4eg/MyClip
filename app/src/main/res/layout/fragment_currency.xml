@@ -29,8 +29,7 @@
             android:id="@+id/text_byn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="32dp"
-            >
+            android:layout_marginEnd="32dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_byn"
@@ -67,8 +66,7 @@
             android:id="@+id/text_usd"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="32dp"
-            >
+            android:layout_marginEnd="32dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:background="@color/karry"
@@ -101,8 +99,7 @@
             android:id="@+id/text_eur"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="32dp"
-            >
+            android:layout_marginEnd="32dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:background="@color/karry"
@@ -135,8 +132,7 @@
             android:id="@+id/text_rub"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginEnd="32dp"
-            >
+            android:layout_marginEnd="32dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:background="@color/karry"
@@ -176,8 +172,7 @@
                 android:id="@+id/edit_uah"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="numberDecimal"
-                />
+                android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 

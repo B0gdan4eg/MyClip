@@ -17,8 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:gravity="center"
         app:circle_fill_color="@color/mate_black"
-        app:circle_border_color="@color/mate_grey"
-        />
+        app:circle_border_color="@color/mate_grey" />
 
 
     <com.google.android.material.tabs.TabLayout
