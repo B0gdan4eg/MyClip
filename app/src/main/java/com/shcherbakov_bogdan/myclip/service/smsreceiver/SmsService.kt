@@ -4,9 +4,7 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import com.shcherbakov_bogdan.myclip.data.MyDatabase
-import com.shcherbakov_bogdan.myclip.data.sms.SmsDao
 import com.shcherbakov_bogdan.myclip.data.sms.TransactionFromSms
-import com.shcherbakov_bogdan.myclip.service.repository.Repository
 import java.util.*
 import java.util.regex.Matcher
 import java.util.regex.Pattern
@@ -31,7 +29,7 @@ class SmsService : Service() {
         return START_STICKY
     }
 
-    fun saveSms(processSms: TransactionFromSms) {
+    private fun saveSms(processSms: TransactionFromSms) {
         database.smsDao().insert(processSms)
     }
 
@@ -45,7 +43,13 @@ class SmsService : Service() {
             val matcher: Matcher = pattern.matcher(smsBody)
             matcher.find()
             val str = matcher.group().split("")
-            return TransactionFromSms(0,str[1].toDouble(),Calendar.getInstance().toString(),false,0)
+            return TransactionFromSms(
+                0,
+                str[1].toDouble(),
+                Calendar.getInstance().toString(),
+                false,
+                0
+            )
         }
         return null
     }

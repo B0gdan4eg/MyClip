@@ -1,6 +1,6 @@
 package com.shcherbakov_bogdan.myclip.utils
 
-enum class Rates(abbreviation : String) {
+enum class Rates(abbreviation: String) {
     BYN("BYN"),
     USD("USD"),
     EUR("USD"),

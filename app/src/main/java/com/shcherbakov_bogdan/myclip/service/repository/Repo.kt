@@ -6,7 +6,7 @@ import com.shcherbakov_bogdan.myclip.data.transactions.Transactions
 interface Repo {
     //fun getTasksStream(): Flow<Result<List<Task>>>
 
-    suspend fun getTransactions() : List<Transactions>?
+    suspend fun getTransactions(): List<Transactions>?
 
     //fun getTaskStream(taskId: String): Flow<Result<Task>>
 
@@ -15,5 +15,5 @@ interface Repo {
     //suspend fun deleteAllTransactions()
 
 
-    suspend fun getCurrencies() : List<CurrencyRates>?
+    suspend fun getCurrencies(): List<CurrencyRates>?
 }

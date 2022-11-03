@@ -7,11 +7,13 @@ import com.shcherbakov_bogdan.myclip.data.category.CategoryDao
 import com.shcherbakov_bogdan.myclip.data.remote.CurrencyDao
 import com.shcherbakov_bogdan.myclip.data.remote.CurrencyRates
 import com.shcherbakov_bogdan.myclip.data.remote.Remote
+import com.shcherbakov_bogdan.myclip.data.sms.SmsDao
+import com.shcherbakov_bogdan.myclip.data.sms.TransactionFromSms
 import com.shcherbakov_bogdan.myclip.data.transactions.TransactionDao
 import com.shcherbakov_bogdan.myclip.data.transactions.Transactions
-import com.shcherbakov_bogdan.myclip.ui.fragments.currency.CurrencyViewModel
-import kotlinx.coroutines.*
-import java.util.*
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class Repository
@@ -20,7 +22,8 @@ class Repository
     private val currencyDao: CurrencyDao,
     private val transactionDao: TransactionDao,
     private val accountDao: AccountDao,
-    private val categoryDao: CategoryDao
+    private val categoryDao: CategoryDao,
+    private val smsDao: SmsDao,
 ) : Repo {
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 
@@ -79,18 +82,18 @@ class Repository
             return@withContext currencyRates
         }
 
-    private suspend fun insertCurrencies(list : List<CurrencyRates>?) {
+    private suspend fun insertCurrencies(list: List<CurrencyRates>?) {
         if (list != null) {
             currencyDao.insert(list)
-            Log.e(TAG,"inserting currencies $list")
+            Log.e(TAG, "inserting currencies $list")
         } else {
-            Log.e(TAG,"inserting currencies failed")
+            Log.e(TAG, "inserting currencies failed")
         }
     }
 
     suspend fun updateCurrencyFromRemote() {
         withContext(ioDispatcher) {
-            var currencyRates : List<CurrencyRates>? = null
+            var currencyRates: List<CurrencyRates>? = null
             try {
                 currencyRates = listOf(
                     remote.getExchangeRate("USD"),
@@ -99,7 +102,7 @@ class Repository
                     remote.getExchangeRate("UAH")
                 )
             } catch (e: Exception) {
-                Log.e(TAG,"failed update Currencies")
+                Log.e(TAG, "failed update Currencies")
             }
             insertCurrencies(currencyRates)
         }
@@ -130,6 +133,28 @@ class Repository
             return@withContext account
         }
     //Category
+
+    //Sms
+    suspend fun getSmsTransactions(): List<TransactionFromSms>? =
+        withContext(ioDispatcher) {
+            var transactionFromSms: List<TransactionFromSms>? = null
+            try {
+                transactionFromSms = smsDao.getListOfTransactionFromSms()
+            } catch (e: Exception) {
+                Log.e(TAG, "failed getTransactionFromSms: ${e.message} ")
+            }
+            return@withContext transactionFromSms
+        }
+
+    suspend fun addSmsTransaction(transactionFromSms: TransactionFromSms) {
+        withContext(ioDispatcher) {
+            try {
+                smsDao.insert(transactionFromSms)
+            } catch (e: Exception) {
+                Log.e("TAG", "failed addTransactionFromSms : ${e.message}")
+            }
+        }
+    }
 
 
     companion object {
